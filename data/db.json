@@ -1,0 +1,91 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "username": "johndoe"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "username": "janesmith"
+    },
+    {
+      "id": 3,
+      "name": "Bob Johnson",
+      "username": "bobjohnson"
+    },
+    {
+      "id": 4,
+      "name": "Alice Brown",
+      "username": "alicebrown"
+    },
+    {
+      "id": 5,
+      "name": "Mike Davis",
+      "username": "mikedavis"
+    }
+  ],
+  "todos": [
+    {
+      "id": 1,
+      "userId": 1,
+      "title": "Learn JavaScript",
+      "body": "Learn the basics of JavaScript and practice coding exercises"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "title": "Finish Project",
+      "body": "Complete the project report and submit it to the manager"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "title": "Buy Groceries",
+      "body": "Buy milk, eggs, and bread from the store"
+    },
+    {
+      "id": 4,
+      "userId": 3,
+      "title": "Call John",
+      "body": "Call John to discuss the meeting schedule"
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "title": "Walk the Dog",
+      "body": "Take the dog for a 30-minute walk in the park"
+    },
+    {
+      "id": 6,
+      "userId": 2,
+      "title": "Clean the House",
+      "body": "Clean the living room and kitchen"
+    },
+    {
+      "id": 7,
+      "userId": 3,
+      "title": "Pay Bills",
+      "body": "Pay the electricity and water bills online"
+    },
+    {
+      "id": 8,
+      "userId": 4,
+      "title": "Learn React",
+      "body": "Learn the basics of React and build a simple app"
+    },
+    {
+      "id": 9,
+      "userId": 5,
+      "title": "Meet with Team",
+      "body": "Meet with the team to discuss the project progress"
+    },
+    {
+      "id": 10,
+      "userId": 1,
+      "title": "Write a Letter",
+      "body": "Write a letter to the customer service department"
+    }
+  ]
+}
