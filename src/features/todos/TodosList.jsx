@@ -1,4 +1,5 @@
 import NewTodoForm from './NewTodoForm' ; 
+import SingleTodo from './SingleTodo';
 
 import { useFetchTodosQuery } from '../api/apiSlice';
 
@@ -15,7 +16,9 @@ const TodosList = () => {
     let content ; 
 
     if ( isLoading ) content = <p>Loading data ...</p>
-    else if ( isSuccess ) content = JSON.stringify ( todos ) 
+    else if ( isSuccess ) {
+        content = todos.map ( todo => { return <SingleTodo todo = { todo } key = { todo.id }/> } )
+    }
     else if ( isError ) content = <p>{ error}</p>
 
     return (

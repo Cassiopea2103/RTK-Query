@@ -13,10 +13,50 @@ export const apiSlice = createApi (
                     {
                         query : () => '/todos' 
                     }
+                ) , 
+                // new todo : 
+                createTodo : builder.mutation (
+                    {
+                        query : ( requestData ) => (
+                            {
+                                url : 'todos' , 
+                                method : 'POST' , 
+                                body : requestData 
+                            }
+                        )
+                    }
+                ) , 
+                // update : 
+                updateTodo : builder.mutation (
+                    {
+                        query : ( requestData ) => (
+                            {
+                                url : `/todos/${ requestData.id }`, 
+                                method : 'PUT' ,
+                                body : requestData 
+                            }
+                        )
+                    }
+                ) ,
+                deleteTodo : builder.mutation (
+                    {
+                        query : ( { id } ) => (
+                            {
+                                url : `/todos/${ id }` , 
+                                method : 'DELETE' , 
+                                body : id 
+                            }
+                        )
+                    }
                 )
             }
         )
     }
 )
 
-export const { useFetchTodosQuery } = apiSlice ; 
+export const { 
+    useFetchTodosQuery , 
+    useCreateTodoMutation , 
+    useUpdateTodoMutation , 
+    useDeleteTodoMutation
+} = apiSlice ;  
