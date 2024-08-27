@@ -6,12 +6,14 @@ export const apiSlice = createApi (
     {
         reducerPath : 'api' , 
         baseQuery : fetchBaseQuery ( { baseUrl : API_URL } ) , 
+        tagTypes : [ 'todos' ] ,
         endpoints : ( builder ) => (
             {
                 // fetch todos : 
                 fetchTodos : builder.query (
                     {
-                        query : () => '/todos' 
+                        query : () => '/todos' , 
+                        providesTags : [ 'todos' ]
                     }
                 ) , 
                 // new todo : 
@@ -19,11 +21,12 @@ export const apiSlice = createApi (
                     {
                         query : ( requestData ) => (
                             {
-                                url : 'todos' , 
+                                url : '/todos' , 
                                 method : 'POST' , 
                                 body : requestData 
                             }
-                        )
+                        ) , 
+                        invalidatesTags : [ 'todos' ]
                     }
                 ) , 
                 // update : 
@@ -31,11 +34,12 @@ export const apiSlice = createApi (
                     {
                         query : ( requestData ) => (
                             {
-                                url : `/todos/${ requestData.id }`, 
+                                url : `/todos/${requestData.id}`, 
                                 method : 'PUT' ,
                                 body : requestData 
                             }
-                        )
+                        ) , 
+                        invalidatesTags : [ 'todos' ] , 
                     }
                 ) ,
                 deleteTodo : builder.mutation (
@@ -46,7 +50,8 @@ export const apiSlice = createApi (
                                 method : 'DELETE' , 
                                 body : id 
                             }
-                        )
+                        ) , 
+                        invalidatesTags : [ 'todos' ]
                     }
                 )
             }

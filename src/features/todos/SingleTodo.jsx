@@ -5,8 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const SingleTodo = ( { todo } ) => {
 
-    console.log ( todo )
-
     const [ updateTodo ] = useUpdateTodoMutation () ; 
     const [ deleteTodo ] = useDeleteTodoMutation () ; 
 
