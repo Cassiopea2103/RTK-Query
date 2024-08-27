@@ -3,7 +3,7 @@ import { useState } from 'react' ;
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' ; 
 import { faUpload } from '@fortawesome/free-solid-svg-icons'; 
 
-import { useCreateTodoMutation } from '../api/apiSlice';
+import { useCreateTodoMutation  } from '../api/apiSlice';
 
 const NewTodoForm = () => {
 
@@ -15,7 +15,7 @@ const NewTodoForm = () => {
 
     const handleSubmit = ( e ) => {
         e.preventDefault () ; 
-        createTodo ( { userId : 1 , title : title , completed : false })
+        createTodo ( { id : nextId ,  userId : 1 , title : title , completed : false })
         setTitle ('') ; 
     }
 
